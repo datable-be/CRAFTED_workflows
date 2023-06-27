@@ -1,0 +1,16 @@
+This workflow:
+1. reads data in the EDM format (from Mint)
+2. creates a unique filename for each file with an URI in the isShownBy value
+3. writes the original image to a local disk (folder 'ORIGINAL')
+4. writes the normalized images (max width 500px) to a local disk (folder 'NORMALIZED')
+5. writes the metadata to a local MongoDB instance
+
+Configuration:
+- set path to local EDM file (exported from Mint)
+- set CP name and dataset ID
+- set path to local disk for downloaded and normalized files
+- set mongoDB connection
+
+Requirements:
+- Python environment for Knime, as explained here: https://docs.knime.com/2018-12/python_installation_guide
+- MongoDB Compass (see https://www.mongodb.com/products/compass)

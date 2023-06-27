@@ -1,0 +1,27 @@
+This Knime workflow is part of a suite of tools developed for the CRAFTED project (https://pro.europeana.eu/project/crafted).
+
+This workflow will extract text from an image, using the Google vision API. The workflow builds upon the results from the workflow 'CRAFTED_get-data-MINT_public'.
+
+Workflow components:
+
+1. read data about the image from a MongoDB and loads the image
+2. base65 encode the image
+3. execute a request to Google Vision text extraction
+5. write the result in W3C annotation format to a file
+6. write the result in W3C annotation format to the MongoDB
+
+Configuration:
+- set mongoDB connection to read image metadata [see workflow 'CRAFTED_get-data-MINT_public]
+- set CP name and dataset ID
+- set API key in Post Request node
+- set mongoDB connection to write results
+- set path to annotations folder
+
+Requirements:
+- Knime (https://www.knime.com/)
+- MongoDB Compass (see https://www.mongodb.com/products/compass)
+- a Google Vision account and API_KEY (see https://cloud.google.com/vision; https://cloud.google.com/vision/docs/ocr)
+
+
+
+
