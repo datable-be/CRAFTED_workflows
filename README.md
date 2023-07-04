@@ -126,7 +126,7 @@ This workflow will extract text from an image, using the Google vision API. The 
 This workflow will extract audio files from a video and (optionally) upload the audio file to a Google Cloud bucket
 
 ### Workflow components:
-1. read data about the sound file from a MongoDB and loads the image
+1. read data about the video file from a MongoDB and loads the video
 2. extract the audio and write to local disk
 3. load files to Google bucket [requires an account and P12key]
 4. write the sound files metadata to a local MongoDB instance
