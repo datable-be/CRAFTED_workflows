@@ -163,4 +163,4 @@ This workflow will extract text from a sound file, using the Google vision API. 
 ### Requirements:
 - Knime (https://www.knime.com/)
 - MongoDB Compass (see https://www.mongodb.com/products/compass)
-- a Google Vision account and API_KEY (see https://cloud.google.com/speech-to-text)
+- a Google Speech-to-text account and API_KEY (see https://cloud.google.com/speech-to-text)
