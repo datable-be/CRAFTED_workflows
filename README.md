@@ -4,8 +4,6 @@ Knime workflows for the CRAFTED project (https://pro.europeana.eu/project/crafte
 This repo contains workflows for content analysis and enrichment using Knime and some external services (e.g. Google Vision).
 The workflows were used to enrich data in the CRAFTED project, that were published on Europeana in the EDM format.
 
-
-
 ## CRAFTED_get-data-Mint_public
 ### Workflow components:
 1. reads data in the EDM format (from Mint)
@@ -123,6 +121,28 @@ This workflow will extract text from an image, using the Google vision API. The 
 - Knime (https://www.knime.com/)
 - MongoDB Compass (see https://www.mongodb.com/products/compass)
 - a Google Vision account and API_KEY (see https://cloud.google.com/vision; https://cloud.google.com/vision/docs/ocr)
+
+## CRAFTED_speech2text_extractAudio_public
+This workflow will extract audio files from a video and (optionally) upload the audio file to a Google Cloud bucket
+
+### Workflow components:
+1. read data about the sound file from a MongoDB and loads the image
+2. extract the audio and write to local disk
+3. load files to Google bucket [requires an account and P12key]
+4. write the sound files metadata to a local MongoDB instance
+
+### Configuration:
+- set mongoDB connection to read video metadata [see workflow 'CRAFTED_get-data-MINT_public]
+- set CP name and dataset ID
+- Optional: set path to P12 key and Google Cloud settings
+- set mongoDB connection to write results
+- set path to annotations folder
+
+### Requirements:
+- Knime (https://www.knime.com/)
+- MongoDB Compass (see https://www.mongodb.com/products/compass)
+- Python3 environment for Knime, as explained here: https://docs.knime.com/2018-12/python_installation_guide
+- Optional: a Google cloud storage account and P12 key (see https://cloud.google.com/storage/docs/creating-buckets)
 
 ## CRAFTED_speech2text_public
 This workflow will extract text from a sound file, using the Google vision API. The workflow builds upon the results from the workflow 'CRAFTED_get-data-MINT_public'.
